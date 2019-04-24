@@ -2,7 +2,7 @@
    "name": "graphql-server",
    "private": true,
    "scripts": {
-      "start": "nodemon --ignore data/ server1.js"
+      "start": "nodemon --ignore data/ server.js"
    },
    "dependencies": {
       "apollo-server-express": "^1.4.0",
