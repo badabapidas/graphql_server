@@ -17,7 +17,7 @@ type Query  {
 // Adding resolver
 const resolverObject = {
     Query: {
-        greeting: () => 'Hello GraphQL  From TutorialsPoint !!'
+        greeting: () => 'Hello there !!'
     }
 }
 
