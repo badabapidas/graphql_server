@@ -1,0 +1,53 @@
+{
+  greeting 
+  students {
+    id
+    firstName
+    lastName
+    collegeId
+  }
+}
+-------------------------------------
+{  
+   studentById(id:"S1001") {
+      id
+      firstName
+      lastName
+   }
+}
+-------------------------------------
+
+{
+   students{
+      id
+      firstName
+      college {
+         id
+         name
+         location
+         rating
+      }
+   }
+}
+----------------------------------
+
+mutation {
+   addStudent_returns_object(collegeId:"col-101",firstName:"Susan",lastName:"George") {
+      id
+      firstName
+      college{
+         id
+         name
+      }
+   }
+}
+
+--------------------
+// validation query variable
+{
+   "input":{
+      "email": "abc@abc.com",
+      "firstName": "kannan",
+      "password": "pass@1234"
+   }
+}

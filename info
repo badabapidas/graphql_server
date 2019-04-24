@@ -1,0 +1,46 @@
+// makeExecutableSchema Function Syntax
+
+import { makeExecutableSchema } from 'graphql-tools';
+
+const jsSchema = makeExecutableSchema({
+   typeDefs,
+   resolvers, // optional
+   logger, // optional
+   allowUndefinedInResolve = false, // optional
+   resolverValidationOptions = {}, // optional
+   directiveResolvers = null, // optional
+   schemaDirectives = null,  // optional
+   parseOptions = {},  // optional
+   inheritResolversFromInterfaces = false  // optional
+});	
+
+// Every resolver function in a GraphQL schema accepts four positional arguments as given below −
+fieldName:(root, args, context, info) => { result }
+
+// Set the value for $myname_Variable as a JSON object in the Query Variables section of the GraphiQL client.
+"myname_Variable": "Bapi"
+
+// Declare Query Variable in GraphiQL
+query myQuery($myname_Variable:String!) {
+   sayHello(name:$myname_Variable)
+}
+
+query query_to_setColor($color_variable:ColorType) {
+   setFavouriteColor(color:$color_variable)
+}
+
+// Mutation
+mutation{
+   someEditOperation(dataField:"valueOfField"):returnType
+}
+
+//college Id should be matched with data from colleges.json for easy retrieval
+
+mutation {
+   createStudent(collegeId:"col-2",firstName:"Tim",lastName:"George")
+}
+
+
+
+
+
